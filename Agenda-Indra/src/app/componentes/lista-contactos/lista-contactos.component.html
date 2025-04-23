@@ -1,0 +1,48 @@
+<div class="lista-contactos">
+  <h2>Mis Contactos</h2>
+
+  <!-- Barra de search -->
+  <div class="barra-busqueda">
+    <input
+      type="text"
+      [(ngModel)]="terminoBusqueda"
+      (input)="buscarContactos()"
+      placeholder="Buscar contactos..."
+      class="form-control"
+    >
+  </div>
+
+  <!-- Si la search arroja 0 resultados -->
+  <div *ngIf="contactos.length === 0" class="sin-resultados">
+    No se encontraron contactos
+  </div>
+
+  <!-- Estructura y rellenado de la tabla de contactos -->
+  <table *ngIf="contactos.length > 0">
+    <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Apellido</th>
+      <th>Email</th>
+      <th>Teléfono</th>
+      <th>Acciones</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let contacto of contactos">
+      <td>{{ contacto.nombre }}</td>
+      <td>{{ contacto.apellido }}</td>
+      <td>{{ contacto.email }}</td>
+      <td>{{ contacto.telefono }}</td>
+      <td>
+        <button (click)="verDetallesDelContacto(contacto.id)">Ver</button>
+        <button (click)="editarContacto(contacto)">Editar</button>
+        <button (click)="eliminarContacto(contacto.id)">Eliminar</button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+
+
+

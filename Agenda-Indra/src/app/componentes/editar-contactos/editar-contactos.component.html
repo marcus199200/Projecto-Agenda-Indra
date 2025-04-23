@@ -1,0 +1,67 @@
+<div class="editar-contactos">
+  <h2>Editar Contacto</h2>
+
+  <form (ngSubmit)="guardarCambios()">
+    <div class="form-group">
+      <label for="nombre">Nombre *</label>
+      <input
+        type="text"
+        id="nombre"
+        name="nombre"
+        [(ngModel)]="contacto.nombre"
+        required
+        class="form-control"
+      >
+    </div>
+
+    <div class="form-group">
+      <label for="apellido">Apellido</label>
+      <input
+        type="text"
+        id="apellido"
+        name="apellido"
+        [(ngModel)]="contacto.apellido"
+        class="form-control"
+      >
+    </div>
+
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input
+        type="email"
+        id="email"
+        name="email"
+        [(ngModel)]="contacto.email"
+        class="form-control"
+      >
+    </div>
+
+    <div class="form-group">
+      <label for="telefono">Teléfono *</label>
+      <input
+        type="tel"
+        id="telefono"
+        name="telefono"
+        [(ngModel)]="contacto.telefono"
+        required
+        class="form-control"
+      >
+    </div>
+
+    <div class="form-group">
+      <label for="direccion">Dirección</label>
+      <input
+        type="text"
+        id="direccion"
+        name="direccion"
+        [(ngModel)]="contacto.direccion"
+        class="form-control"
+      >
+    </div>
+
+    <div class="acciones">
+      <button type="submit" class="btn btn-primary">Guardar Cambios</button>
+      <button type="button" class="btn btn-secondary" (click)="cancelar()">Cancelar</button>
+    </div>
+  </form>
+</div>

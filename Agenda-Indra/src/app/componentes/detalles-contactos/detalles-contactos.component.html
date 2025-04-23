@@ -1,0 +1,36 @@
+<!-- src/app/componentes/detalles-contactos/detalles-contactos.component.html -->
+<div class="detalles-contactos" *ngIf="contacto">
+  <h2>Detalles del Contacto</h2>
+
+  <div class="tarjeta-contacto">
+    <div class="detalle">
+      <strong>Nombre:</strong> {{ contacto.nombre }}
+    </div>
+    <div class="detalle">
+      <strong>Apellido:</strong> {{ contacto.apellido }}
+    </div>
+    <div class="detalle">
+      <strong>Email:</strong>
+      {{ contacto.email }}
+      <div class="acciones-email">
+        <button (click)="enviarEmail()" *ngIf="contacto.email">
+          Enviar Email
+        </button>
+        <button (click)="copiarEmail()" *ngIf="contacto.email">
+          Copiar Email
+        </button>
+      </div>
+    </div>
+    <div class="detalle">
+      <strong>Teléfono:</strong> {{ contacto.telefono }}
+    </div>
+    <div class="detalle">
+      <strong>Dirección:</strong> {{ contacto.direccion }}
+    </div>
+  </div>
+
+  <div class="acciones">
+    <button (click)="volverALista()">Volver a la Lista</button>
+  </div>
+</div>
+

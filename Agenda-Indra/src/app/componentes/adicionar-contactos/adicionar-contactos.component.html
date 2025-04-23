@@ -1,0 +1,68 @@
+<div class="adicionar-contactos">
+  <h2>Crear Nuevo Contacto</h2>
+  <!-- Angular form que llama guardarContacto() -->
+  <form (ngSubmit)="guardarContacto()">
+    <div class="form-group">
+      <label for="nombre">Nombre *</label>
+      <input
+        type="text"
+        id="nombre"
+        name="nombre"
+        [(ngModel)]="nuevoContacto.nombre"
+        required
+        class="form-control"
+      >
+    </div>
+
+    <div class="form-group">
+      <label for="apellido">Apellido</label>
+      <input
+        type="text"
+        id="apellido"
+        name="apellido"
+        [(ngModel)]="nuevoContacto.apellido"
+        class="form-control"
+      >
+    </div>
+
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input
+        type="email"
+        id="email"
+        name="email"
+        [(ngModel)]="nuevoContacto.email"
+        class="form-control"
+      >
+    </div>
+
+    <div class="form-group">
+      <label for="telefono">Teléfono *</label>
+      <input
+        type="tel"
+        id="telefono"
+        name="telefono"
+        [(ngModel)]="nuevoContacto.telefono"
+        required
+        class="form-control"
+      >
+    </div>
+
+    <div class="form-group">
+      <label for="direccion">Dirección</label>
+      <input
+        type="text"
+        id="direccion"
+        name="direccion"
+        [(ngModel)]="nuevoContacto.direccion"
+        class="form-control"
+      >
+    </div>
+
+    <div class="acciones">
+      <button type="submit" class="btn btn-primary">Guardar Contacto</button>
+      <button type="button" class="btn btn-secondary" (click)="cancelar()">Cancelar</button>
+    </div>
+  </form>
+</div>
+
